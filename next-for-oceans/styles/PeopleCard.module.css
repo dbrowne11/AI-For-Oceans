@@ -1,0 +1,10 @@
+.glassCard {
+	backdrop-filter: blur(20px);
+}
+
+.cardmedia {
+	object-fit: fill;
+}
+
+.box {
+}

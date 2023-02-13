@@ -1,0 +1,156 @@
+Backend Testing  done by Anthony Frank
+	The testing is done by calling the CRUD(Create, Retrieve, Update, Delete)
+	functions on the Database to manipulate the datasetCards displayed in the
+	dataset page. These test are done through Postman a way to create request
+	and send them website to make the appropriate calls to the database.
+	
+Unit Test Cards:
+
+Used Postman to Post to database
+
+GET http://localhost:3000/api/dataCards
+
+[Bad Title- automatically turns numbes into strings]
+Post http://localhost:3000/api/dataCards
+{
+            "title": 123,
+            "link": "https://lila.science/datasets/boxes-on-bees-and-pole",
+            "description":"a",
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+
+[No Title- doesn't accept missing titles]
+Post http://localhost:3000/api/dataCards
+{
+            "title": "",
+            "link": "https://lila.science/datasets/boxes-on-bees-and-pole",
+            "description":"a",
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+
+[Post http://localhost:3000/api/dataCards]
+{
+            "link": "https://lila.science/datasets/boxes-on-bees-and-pole",
+            "description":"a",
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+
+
+[Bad description- automatically turns numbers into strings]
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": "https://lila.science/datasets/boxes-on-bees-and-pole",
+            "description":12345,
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+
+[No description- doesn't accept missing titles]
+Post http://localhost:3000/api/dataCards
+{
+            "title": "a",
+            "link": "https://lila.science/datasets/boxes-on-bees-and-pole",
+            "description":"",
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+Post http://localhost:3000/api/dataCards
+{
+	    "title":"a"
+            "link": "https://lila.science/datasets/boxes-on-bees-and-pole",
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+
+
+[bad link- autmatically turns numbers into strings]
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": 2468,
+            "description":"12345",
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+
+
+[no link- doesn't accept missing titles]
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": "",
+            "description":12345,
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "description":12345,
+	    "download":"https://lilablobssc.blob.core.windows.net/bx-on-bees/boxes-on-bees-2021.zip"
+}
+
+
+[bad download- autmatically turns numbers into strings]
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": "2468",
+            "description":"12345",
+	    "download": 1357
+}
+[no download - doesn't accept missing titles]
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": "2468",
+            "description":"12345",
+	    "download": ""
+}
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": "2468",
+            "description":"12345"
+}
+[Delete All - Empty dataset page]
+DELETE http://localhost:3000/api/dataCards/[dataCards' ids]
+
+[Duplicate datasets- pass doesn't allow duplicate titles, links, or downloads]
+
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": "2468",
+            "description":"12345",
+	    "download": "cb"
+}
+
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": "2468",
+            "description":"12345",
+	    "download": "cb"
+}
+
+[Duplicate dataset Descriptions]
+Post http://localhost:3000/api/dataCards
+{
+            "title": "a",
+            "link": "24",
+            "description":"12345",
+	    "download": "n"
+}
+Post http://localhost:3000/api/dataCards
+{
+            "title": "b",
+            "link": "48",
+            "description":"12345",
+	    "download": "z"
+}
+
+[Update dataset]
+PUT http://localhost:3000/api/dataCards/[a's id]
+{
+            "title": "a",
+            "link": "24",
+            "description":"1234567890",
+	    "download": "n"
+}

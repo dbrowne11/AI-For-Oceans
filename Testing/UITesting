@@ -1,0 +1,15 @@
+A majority of our work was within our frontend UI.  Two major components existed in our process to test and accept work in the frontend.  
+For functionality tests, we manually interacted with each component on our website.
+Additionally, we would continually update our client on our process and seek their input regarding design choices
+
+Daniel Testing:
+  For each information page (people, voices, and mission), there are no interactive components within the page so testing consisted of ensuring that each page was accessible, 
+    and ensuring that all information was correctly displayed on the page (which was done visually)
+    
+Veshant Testing:
+  For the datasets page, tested that each all datasets in the database were displayed with the correct information.
+    The download and view source buttons directed to the correct pages.
+    The dataset search bar lists out the available datasets.  However the search is not functional.
+  For the individual dataset pages, tested that the url brought to the correct dataset page.
+    The download and view source buttons directed to the correct pages.
+  

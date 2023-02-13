@@ -1,0 +1,17 @@
+.banner {
+    background-image: "url('../images/OceanBanner.PNG')";
+}
+.heading {
+    margin:0px;
+    justify-content: center;
+    display: flex;
+  }
+
+.main {
+    padding: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
